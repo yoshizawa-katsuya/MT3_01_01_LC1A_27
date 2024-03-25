@@ -25,7 +25,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	float frame = 0;
 	Vector3 rotate{0};
-	Vector3 translate{0};
+	Vector3 translate{ float(kWindowWidth / 2), float(kWindowHeight / 2) , 0.0f};
 
 	Matrix4x4 worldMatrix;
 	Matrix4x4 cameraMatrix;
@@ -40,9 +40,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	Vector3 kLocalVertices[3] = {0};
 
-
-	kLocalVertices[1] = { 500.0f, -500.0f, 0.0f };
-	kLocalVertices[2] = { -500.0f, -500.0f, 0.0f };
+	kLocalVertices[0] = { 0.0f, 300.0f, 0.0f };
+	kLocalVertices[1] = { 300.0f, -300.0f, 0.0f };
+	kLocalVertices[2] = { -300.0f, -300.0f, 0.0f };
 
 
 	// ウィンドウの×ボタンが押されるまでループ
@@ -59,10 +59,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 
 		if (keys[DIK_A]) {
-			translate.x -= 5;
+			translate.x -= 10;
 		}
 		if (keys[DIK_D]) {
-			translate.x += 5;
+			translate.x += 10;
 		}
 
 		if (keys[DIK_W]) {
